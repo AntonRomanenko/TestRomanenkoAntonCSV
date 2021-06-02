@@ -7,13 +7,11 @@ require_once "database\Database.php";
         private $database;
         function __construct($file) {
             $this->database = new Database('localhost', 'root', 'root', 'csv_db');
-          //  var_dump($file);
                 if( !$file['name']) {
                     return;
                 }
                  $fileFormat = explode('.', $file['name'])[1];
                 //валидация
-               // var_dump($fileFormat);
                
                 if($fileFormat !== "csv") {
                     throw new RuntimeException('Invalid parameters.');
@@ -21,13 +19,11 @@ require_once "database\Database.php";
                 }
     
                $this->file = $file;
-     
                 
         }
 
         public function upload() {
             $csv = $this->file;
-           //var_dump( $csv);
             if(!is_dir('./csv')) {
                 mkdir('./csv', 0777, true);
             }

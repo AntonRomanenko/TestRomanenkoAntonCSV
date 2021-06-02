@@ -1,8 +1,8 @@
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
 <?php
 require_once  "FileUploader.php";
-
 
 $isDelete = isset($_GET['delete']) ?? false;
 
@@ -52,7 +52,7 @@ $fileClass->saveDateToDatabase();
     <li>File type:<?php echo $_FILES['csv']['type'];?></li>
     <li>File type:<?php echo $_FILES['csv']['tmp_name'];?></li>
 </ul>
-  <div class = 'container '>
+  <div class = 'container'>
     <div >
       <a  class="btn btn-primary"  type='button'  href="./index.php">Import data</a>
     </div>
