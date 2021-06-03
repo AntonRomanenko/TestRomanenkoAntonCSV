@@ -7,9 +7,9 @@ require_once "database\Database.php";
         private $database;
         function __construct($file) {
             $this->database = new Database('localhost', 'root', 'root', 'csv_db');
-                if( !$file['name']) {
-                    return;
-                }
+            if( $file['name'] == '') {
+                return;
+            }
                  $fileFormat = explode('.', $file['name'])[1];
                 //валидация
                
